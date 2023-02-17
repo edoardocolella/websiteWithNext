@@ -1,0 +1,12 @@
+{
+    "ita": {
+        "homePageP1": "Ciao, sono Edoardo Colella. Sono nato ad Avellino il 5 ottobre 1999 e ho vissuto fino ai miei 18 anni nella provincia di Benevento.",
+        "homePageP2": "Dal 2018 ho frequentato il corso di Ingegneria Informatica al Politecnico di Torino e nel marzo del 2022 ho ottenuto la mia laurea triennale. Mi sono iscritto dunque al corso di Computer Engineering (orientamento Software), che tutt'ora frequento.",
+        "homePageP3": "Qui puoi trovare le principali informazioni su tutto ciò che ho fatto negli scorsi anni."
+     },
+    "en": {
+        "homePageP1":"Hi, I'm Edoardo Colella. I was born in Avellino on October 5, 1999 and I lived up to my 18 years in the province of Benevento.",
+        "homePageP2":"From 2018 I attended the Computer Engineering course at the Polytechnic of Turin and in March 2022 I obtained my three-year degree. So I enrolled in the Computer Engineering course (Software orientation), which I still attend.",
+        "homePageP3":"Here you can find the main information about everything I've done in the past years."
+     }
+}

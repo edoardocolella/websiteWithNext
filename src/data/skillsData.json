@@ -1,0 +1,20 @@
+{
+    "it": [
+        "Conoscenza di algoritmi e strutture dati in linguaggio C",
+        "Padronanza del paradigma della programmazione orientata agli oggetti in linguaggio Java",
+        "Conoscenza dei sistemi operativi UNIX-like",
+        "Padronanza del modello E-R e del linguaggio SQL",
+        "Conoscenza del framework ReactJS per lo sviluppo di applicazioni web",
+        "Conoscenza basilare del software Docker",
+        "Conoscenza del paradigma delle Blockchain e degli Smart Contracts in Ethereum"
+    ],
+    "en": [
+        "Knowledge of algorithms and data structures in C language",
+        "Mastery of the object-oriented programming paradigm in the Java language",
+        "Knowledge of UNIX-like operating systems",
+        "Mastery of E-R model and SQL language",
+        "Knowledge of the ReactJS framework for web development",
+        "Basic knowledge of Docker software",
+        "Knowledge of the Blockchain and Smart Contracts paradigm in Ethereum"
+    ]
+}

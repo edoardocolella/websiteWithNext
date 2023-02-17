@@ -1,0 +1,49 @@
+{
+    "liceo": {
+        "it": {
+            "title": "Liceo Scientifico G. Rummo",
+            "qual":"Diploma di Maturità scientifica",
+            "description":"Nel corso dei cinque anni di scuola superiore ho imparato i fondamenti della matematica analitica, delle scienze naturali e di comprensione di testi, in lingua inglese e italiana."
+        },
+        "en": {
+            "title": "Liceo Scientifico G. Rummo",
+            "qual":"Scientific high school diploma",
+            "description": "During the five years of high school I learned the fundamentals of analytical mathematics, natural sciences and text comprehension, in English and Italian."
+        },
+        "city": "Benevento",
+        "startDate": "2013",
+        "endDate": "2018",
+        "grade": "100L/100"
+    },
+    "politoMag":{
+        "it": {
+            "title": "Politecnico di Torino",
+            "qual":"Laurea Magistrale in Ingegneria Informatica",
+            "description": "Nel percorso di Laurea Magistrale ho approfondito le conoscenze riguardo il processo produttivo dello sviluppo di un Software, sia con il processo WaterFall che SCRUM/Agile, con il dovuto studio del processo di needfinding e prototyping. Ho, inoltre, acquisito competenze nello sviluppo di applicazioni web, approfondendo la libreria frontend React e i framework backend Spring e express."
+        },
+        "en": {
+            "title": "Politecnico di Torino",
+            "qual":"Master of Science in Computer Engineering",
+            "description": "During the Master's Degree I deepened my knowledge of the production process of software development, both with the WaterFall and SCRUM/Agile processes, with due study of the needfinding and prototyping process. I also acquired skills in web application development, deepening the React frontend library and the Spring and express backend frameworks."
+        },
+        "city": "Torino",
+        "startDate": "2022"
+    },
+    "politoTri":{
+        "it": {
+            "title": "Politecnico di Torino",
+            "qual":"Laurea Triennale in Ingegneria Informatica",
+            "description": "Durante il percorso triennale ho acquisito conoscenze e competenze fondamentali, sia da un punto di vista informatico che elettronico. Ho imparato le principali nozioni su algoritmi e strutture dati, architetture di calcolatori elettronici e creazione e manipolazione di basi di dati con schemi E-R."
+            
+        },
+        "en": {
+            "title": "Politecnico di Torino",
+            "qual":"Bachelor of Science in Computer Engineering",
+            "description": "During the three-year course I have acquired fundamental knowledge and skills, both from an IT and an electronic point of view. I learned the main notions of algorithms and data structures, computer architectures and creation and manipulation of databases with E-R schemes."
+        },
+        "city": "Torino",
+        "startDate": "2018",
+        "endDate": "2022",
+        "grade": "100/110"
+    }    
+}

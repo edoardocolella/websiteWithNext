@@ -1,0 +1,56 @@
+{
+    "liveArt": {
+        "ita": {
+            "description": "LiveArtVR è un software VR sviluppato in Unity per il corso Human Computer Interaction.",
+            "linkRepoDescription": "Link alla Repository"
+        },
+        "en": {
+            "description": "LiveArtVR is a VR software developed in Unity for the Human Computer Interaction course.",
+            "linkRepoDescription": "Link to Repository"
+        },
+        "tech": "Unity, C#, OpenXR",
+        "linkRepo": "https://github.com/edoardocolella/LiveArtVR"
+    },
+    "ezwh": {
+        "description": "",
+        "tech": "javascript, express, sqlite",
+        "ita": {
+            "description": "EZWH è un'applicazione web sviluppata in JavaScript con il framework express.js.",
+            "linkRepoDescription": "Link alla Repository"
+        },
+        "en": {
+            "description": "EZWH is a web application developed in JavaScript with the express.js framework.",
+            "linkRepoDescription": "Link to Repository"
+        },
+        "linkRepo": "https://github.com/edoardocolella/EZWH"
+    },
+    "hikeFIVE": {
+        "ita": {
+            "description": "HikeFIVE! è un'applicazione web sviluppata in JavaScript con i framework React per il frontend e express.js per il backend.",
+            "linkRepoDescription": "Link alla Repository"
+        },
+        "en": {
+            "description": "HikeFIVE! is a web application developed in JavaScript with the React framework for the frontend and express.js for the backend.",
+            "linkRepoDescription": "Link to Repository"
+        },
+        "tech": "javascript, react, express, sqlite",
+        "linkDemo": "",
+        "linkRepo": "https://github.com/edoardocolella/studyplan"
+
+    },
+    "studyPlan": {
+        "tech": "javascript, react, express, sqlite",
+        "ita": {
+            "description": "Una semplice app web in React ed Express per il corso Web Application I. Consente agli studenti di predisporre il proprio Piano di studi per iscrizione all'anno accademico.",
+            "linkDemoDescription": "Link alla Demo pubblica",
+            "linkRepoDescription": "Link alla Repository"
+        },
+        "en": {
+            "description": "A simple web app in React and Express for the Web Application I course. Allows students to prepare their own Study Plan for enrollment in the academic year",
+            "linkDemoDescription": "Link to public Demo",
+            "linkRepoDescription": "Link to Repository"
+        },
+        "linkDemo": "https://study-plan-front.onrender.com/",
+        "linkRepo": "https://github.com/edoardocolella/studyplan"
+    }
+}

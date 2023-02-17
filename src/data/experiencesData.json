@@ -1,0 +1,49 @@
+{
+    "hknPres": {
+        "it": {
+            "title": "Presidente",
+            "description": "Come presidente del Mu Nu Chapter di Eta Kappa Nu al Politecnico di Torino, mi occupo quotidianamente di amministrare e supervisionare le attività dell'associazione. Insieme agli altri membri del Board prendo le decisioni sulle attività future e ne propongo di nuove."
+        },
+        "en": {
+            "title": "President",
+            "description": "As president of the Mu Nu Chapter of Eta Kappa Nu at the Polytechnic of Turin, I am in charge of administering and supervising the activities of the association on a daily basis. Together with the other members of the Board, I make decisions about future activities and propose new ones."
+        },
+        "startDate": "10/2022"
+    },
+    "hknSite": {
+        "it": {
+            "title": "Co-responsabile del sito Web",
+            "description": "Da co-responsabile del sito www.hknpolito.org mi sono occupato di gestire sia il lato tecnico che quello contenutistico delle sue pagine."
+        },
+        "en": {
+            "title": "Co-responsible for the website",
+            "description": "As co-manager of the www.hknpolito.org site, I managed both the technical side and the content side of its pages."
+        },
+        "startDate": "11/2021",
+        "endDate": "09/2022"
+    },
+    "collanPT": {
+        "it": {
+            "title": "Collaborazione part-time della didattica per il corso Politica e Tecnica",
+            "description": "Mi sono occupato di consigliare e revisionare gli studenti nella produzione del loro progetto del corso, fornendo loro tutta la mia conoscenza in ambito informatico."
+        },
+        "en": {
+            "title": "Part-time teaching assistant for the Politics and Techniques course",
+            "description": "I have been involved in advising and reviewing students in the production of their course project, providing them with all my knowledge in computer science."
+        },
+        "startDate": "03/2022",
+        "endDate": "06/2022"
+    },
+    "collabINF": {
+        "it": {
+            "title": "Collaborazione part-time della didattica per il corso Informatica",
+            "description": "Mi sono occupato dell'assistenza diretta agli studenti nelle ore di laboratorio. Il linguaggio usato nel corso è stato Python 3."
+        },
+        "en": {
+            "title": "Part-time teaching assistant for the Computer Science course",
+            "description": "I took care of the direct assistance to the students during the laboratory hours. The language used in the course was Python 3."
+        },
+        "startDate": "10/2022",
+        "endDate": "01/2023"
+    }
+}

@@ -1,0 +1,27 @@
+.item-padding {
+    padding: 15px;
+  }
+
+.center {
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+  text-justify: inter-word;
+}
+
+.vertical{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.nodec { 
+    color: black;
+    text-decoration: none;
+ }
+
+.pad30{
+    padding: 30px;
+}
+
