@@ -9,7 +9,7 @@ import { Col, Container, ListGroup, Row } from 'react-bootstrap'
 import { useContext } from 'react'
 import { LanguageContext, choiseWordForActualLanguage } from './_app'
 
-export function ContactsPage() {
+export default function ContactsPage() {
   const language = useContext(LanguageContext)
 
   return (
