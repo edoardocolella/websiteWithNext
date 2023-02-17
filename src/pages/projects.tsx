@@ -9,7 +9,7 @@ import ProjectsData from '../data/projectsData.json'
 import liveartImage from '../../public/images/liveart.jpg'
 import studyplanImage from '../../public/images/studyplan.jpg'
 import Image, { StaticImageData } from 'next/image'
-import { LanguageContext } from './_app'
+import { chooseWordForActualLanguage, LanguageContext } from './_app'
 
 export default function ProjectsPage() {
   const language = useContext(LanguageContext)
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   return (
     <Container className="text-center">
       <br />
-      <h1>{language === 'IT' ? 'Progetti' : 'Projects'}</h1>
+      <h1>{chooseWordForActualLanguage(language, 'Progetti', 'Projects')}</h1>
       <br />
       <ProjectCard
         image={liveartImage}
@@ -43,7 +43,7 @@ function ProjectCard(props: {
   image?: StaticImageData
   data: {
     tech: string
-    ita: { description: string }
+    it: { description: string }
     en: { description: string }
   }
 }) {
@@ -90,7 +90,11 @@ function ProjectCard(props: {
               <Row>
                 <Col className="text-start">
                   <strong>
-                    {language === 'IT' ? 'Tecnologie: ' : 'Technology: '}
+                    {chooseWordForActualLanguage(
+                      language,
+                      'Tecnologie: ',
+                      'Technology: ',
+                    )}
                   </strong>
                   {props.data.tech}
                 </Col>
@@ -108,23 +112,9 @@ function ProjectModal(props: {
   image?: StaticImageData
   title: string
   onClose: any
-  data: {
-    ita: {
-      description: string
-      linkDemoDescription?: string
-      linkRepoDescription?: string
-    }
-    en: {
-      description: string
-      linkDemoDescription?: string
-      linkRepoDescription?: string
-    }
-    linkDemo?: string
-    linkRepo?: string
-  }
+  data: any
 }) {
-
-const language = useContext(LanguageContext)
+  const language = useContext(LanguageContext)
 
   return (
     <Modal show={props.show} onHide={props.onClose}>
@@ -133,25 +123,27 @@ const language = useContext(LanguageContext)
       </Modal.Header>
       <Modal.Body>
         {props.image && (
-          
-        <Image src={props.image} height={200} width={400} alt={"error"} />
-          
+          <Image src={props.image} height={200} width={400} alt={'error'} />
         )}
         <Row className="justify">
           <Col>
             <br />
-            {language === 'IT'
-              ? props.data.ita.description
-              : props.data.en.description}
+            {chooseWordForActualLanguage(
+              language,
+              props.data.it.description,
+              props.data.en.description,
+            )}
           </Col>
         </Row>
         {props.data.linkDemo && (
           <Row>
             <Col>
               <a href={props.data.linkDemo} target="_blank" rel="noreferrer">
-                {language === 'IT'
-                  ? props.data.ita.linkDemoDescription
-                  : props.data.en.linkDemoDescription}{' '}
+                {chooseWordForActualLanguage(
+                  language,
+                  props.data.it.linkDemoDescription,
+                  props.data.en.linkDemoDescription
+                )}{' '}
               </a>
             </Col>
           </Row>
@@ -160,9 +152,11 @@ const language = useContext(LanguageContext)
           <Row>
             <Col>
               <a href={props.data.linkRepo} target="_blank" rel="noreferrer">
-                {language === 'IT'
-                  ? props.data.ita.linkRepoDescription
-                  : props.data.en.linkRepoDescription}{' '}
+                {chooseWordForActualLanguage(
+                  language,
+                  props.data.it.linkRepoDescription,
+                  props.data.en.linkRepoDescription,
+                )}{' '}
               </a>
             </Col>
           </Row>

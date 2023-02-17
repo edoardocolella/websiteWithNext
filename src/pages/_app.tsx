@@ -12,7 +12,7 @@ import { MyFooter } from '@/components/MyFooter'
 import { createContext, useState } from 'react'
 
 export const LanguageContext = createContext("IT")
-export function choiseWordForActualLanguage(
+export function chooseWordForActualLanguage(
   language: string,
   italianWord: string,
   englishWord: string,

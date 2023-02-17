@@ -12,7 +12,7 @@ import Data from '../data/educationData.json'
 import Image, { StaticImageData } from 'next/image'
 import imageRummo from '../../public/images/rummo.jpg'
 import imagePolito from '../../public/images/polito.png'
-import { LanguageContext, choiseWordForActualLanguage } from './_app'
+import { LanguageContext, chooseWordForActualLanguage } from './_app'
 
 export default function EducationPage() {
   const language = useContext(LanguageContext)
@@ -21,7 +21,7 @@ export default function EducationPage() {
     <Container className="text-center">
       <br />
       <h1>
-        {choiseWordForActualLanguage(language, 'Educazione', 'Education')}
+        {chooseWordForActualLanguage(language, 'Educazione', 'Education')}
       </h1>
       <br />
       <SchoolCard data={Data.politoMag} image={imagePolito} />
@@ -101,7 +101,7 @@ function SchoolCard(props: {
                     <Row>
                       <Col>
                         <strong>
-                          {choiseWordForActualLanguage(
+                          {chooseWordForActualLanguage(
                             language,
                             'Istituto',
                             'Institute',
@@ -111,7 +111,7 @@ function SchoolCard(props: {
                     </Row>
                     <Row>
                       <Col>
-                        {choiseWordForActualLanguage(
+                        {chooseWordForActualLanguage(
                           language,
                           props.data.it.title,
                           props.data.en.title,
@@ -122,7 +122,7 @@ function SchoolCard(props: {
                     <Row>
                       <Col>
                         <strong>
-                          {choiseWordForActualLanguage(
+                          {chooseWordForActualLanguage(
                             language,
                             'Titolo',
                             'Title',
@@ -142,7 +142,7 @@ function SchoolCard(props: {
                     <Row>
                       <Col>
                         <strong>
-                          {choiseWordForActualLanguage(
+                          {chooseWordForActualLanguage(
                             language,
                             'Voto',
                             'Mark',
@@ -154,7 +154,7 @@ function SchoolCard(props: {
                       <Col>
                         {props.data.grade
                           ? props.data.grade
-                          : choiseWordForActualLanguage(
+                          : chooseWordForActualLanguage(
                               language,
                               'Non disponibile',
                               'Not available',
@@ -169,7 +169,7 @@ function SchoolCard(props: {
                           <Row>
                             <Col>
                               <strong>
-                                {choiseWordForActualLanguage(
+                                {chooseWordForActualLanguage(
                                   language,
                                   'Città',
                                   'City',
@@ -190,7 +190,7 @@ function SchoolCard(props: {
                           <Row>
                             <Col>
                               <strong>
-                                {choiseWordForActualLanguage(
+                                {chooseWordForActualLanguage(
                                   language,
                                   'Data',
                                   'Date',
@@ -204,7 +204,7 @@ function SchoolCard(props: {
                             ' - ' +
                             (props.data.endDate
                               ? props.data.endDate
-                              : choiseWordForActualLanguage(
+                              : chooseWordForActualLanguage(
                                   language,
                                   'in corso',
                                   'in progress',
@@ -250,7 +250,7 @@ function SchoolModal(props: {
     <Modal show={props.show} onHide={props.onClose}>
       <Modal.Header closeButton>
         <Modal.Title>
-          {choiseWordForActualLanguage(
+          {chooseWordForActualLanguage(
             language,
             props.data.it.title,
             props.data.en.title,
@@ -262,7 +262,7 @@ function SchoolModal(props: {
         <p />
         <Row className="justify">
           <Col>
-            {choiseWordForActualLanguage(
+            {chooseWordForActualLanguage(
               language,
               props.data.it.description,
               props.data.en.description,
@@ -278,7 +278,7 @@ function SchoolModal(props: {
               ' - ' +
               (props.data.endDate
                 ? props.data.endDate
-                : choiseWordForActualLanguage(
+                : chooseWordForActualLanguage(
                     language,
                     'in corso',
                     'in progress',
@@ -295,7 +295,7 @@ function SchoolModal(props: {
             {' ' +
               (props.data.grade
                 ? props.data.grade
-                : choiseWordForActualLanguage(
+                : chooseWordForActualLanguage(
                     language,
                     'Non disponibile',
                     'Not available',

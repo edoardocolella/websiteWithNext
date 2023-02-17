@@ -1,6 +1,6 @@
 {
     "liveArt": {
-        "ita": {
+        "it": {
             "description": "LiveArtVR è un software VR sviluppato in Unity per il corso Human Computer Interaction.",
             "linkRepoDescription": "Link alla Repository"
         },
@@ -14,7 +14,7 @@
     "ezwh": {
         "description": "",
         "tech": "javascript, express, sqlite",
-        "ita": {
+        "it": {
             "description": "EZWH è un'applicazione web sviluppata in JavaScript con il framework express.js.",
             "linkRepoDescription": "Link alla Repository"
         },
@@ -25,7 +25,7 @@
         "linkRepo": "https://github.com/edoardocolella/EZWH"
     },
     "hikeFIVE": {
-        "ita": {
+        "it": {
             "description": "HikeFIVE! è un'applicazione web sviluppata in JavaScript con i framework React per il frontend e express.js per il backend.",
             "linkRepoDescription": "Link alla Repository"
         },
@@ -40,7 +40,7 @@
     },
     "studyPlan": {
         "tech": "javascript, react, express, sqlite",
-        "ita": {
+        "it": {
             "description": "Una semplice app web in React ed Express per il corso Web Application I. Consente agli studenti di predisporre il proprio Piano di studi per iscrizione all'anno accademico.",
             "linkDemoDescription": "Link alla Demo pubblica",
             "linkRepoDescription": "Link alla Repository"

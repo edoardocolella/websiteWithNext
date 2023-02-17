@@ -16,5 +16,11 @@
         "Knowledge of the ReactJS framework for web development",
         "Basic knowledge of Docker software",
         "Knowledge of the Blockchain and Smart Contracts paradigm in Ethereum"
+    ],
+    "languagesPt1":[
+        "C","C#","C++","Java","JavaScript"
+    ],
+    "languagesPt2":[
+        "TypeScript", "Rust", "Solidity", "Python", "ARM"
     ]
 }

@@ -5,14 +5,16 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import { useRouter } from 'next/router'
-
 import { Row, Col, Container } from 'react-bootstrap'
 import Data from '../data/homepageData.json'
-import { LanguageContext } from './_app'
+import { LanguageContext, chooseWordForActualLanguage } from './_app'
 import { useContext } from 'react'
 
 export default function Home() {
   const language = useContext(LanguageContext)
+
+  const myData = language === 'IT' ? Data.it : Data.en
+
   return (
     <>
       <Head>
@@ -27,29 +29,30 @@ export default function Home() {
           <Row className="justify-content-center">
             <h1 className="center">About me</h1>
             <Col className="justify-content-center" md={10} xl={8}>
-              <p>
-                {language === 'IT' ? Data.ita.homePageP1 : Data.en.homePageP1}
-              </p>
-              <p>
-                {language === 'IT' ? Data.ita.homePageP2 : Data.en.homePageP2}
-              </p>
-
-              <p>
-                {language === 'IT' ? Data.ita.homePageP3 : Data.en.homePageP3}
-              </p>
+              <p>{myData.homePageP1}</p>
+              <p>{myData.homePageP2}</p>
+              <p>{myData.homePageP3}</p>
             </Col>
           </Row>
           <Row className="d-flex justify-content-center">
             <Col md={10} xl={4} className="me-3">
               <NavCard
-                title={language === 'IT' ? 'Educazione' : 'Education'}
+                title={chooseWordForActualLanguage(
+                  language,
+                  'Educazione',
+                  'Education',
+                )}
                 image="https://www.unionearchitetti.com/wp-content/uploads/2022/06/polito-architettura-politecnico-750x450.png"
                 page="education"
               />
             </Col>
             <Col md={10} xl={4} className="me-3">
               <NavCard
-                title={language === 'IT' ? 'Esperienze' : 'Experiences'}
+                title={chooseWordForActualLanguage(
+                  language,
+                  'Esperienze',
+                  'Experiences',
+                )}
                 image="https://www.dealogando.com/wp-content/uploads/2021/10/team-working-come-lavorare-in-team.jpeg"
                 page="experiences"
               />
@@ -58,7 +61,11 @@ export default function Home() {
           <Row className="d-flex justify-content-center">
             <Col md={10} xl={4} className="me-3">
               <NavCard
-                title={language === 'IT' ? 'Progetti' : 'Projects'}
+                title={chooseWordForActualLanguage(
+                  language,
+                  'Progetti',
+                  'Projects',
+                )}
                 image="https://assets.entrepreneur.com/content/3x2/2000/20150708172005-coding-working-workspace-apple-macintosh.jpeg"
                 page="projects"
               />
@@ -79,14 +86,12 @@ export default function Home() {
 
 function NavCard(props: {
   page: any
-  image: string | undefined
+  image: string 
   title: string
 }) {
-  //let navigate = useNavigate()
   const router = useRouter()
 
   let navigateSlash = function () {
-    //navigate(`/${props.page}`)
     router.replace(`/${props.page}`)
   }
   return (

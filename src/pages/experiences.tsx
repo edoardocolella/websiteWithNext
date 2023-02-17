@@ -7,14 +7,16 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import Data from '../data/experiencesData.json'
-import { LanguageContext } from './_app'
+import { LanguageContext, chooseWordForActualLanguage } from './_app'
 
 export default function ExperiencesPage() {
   const language = useContext(LanguageContext)
   return (
     <Container className="text-center">
       <br />
-      <h1>{language === 'IT' ? 'Esperienze' : 'Experiences'}</h1>
+      <h1>
+        {chooseWordForActualLanguage(language, 'Esperienze', 'Experiences')}
+      </h1>
       <br />
       <h3>Eta Kappa Nu</h3>
       <ExperienceCard data={Data.hknPres} />
@@ -43,7 +45,6 @@ function ExperienceCard(props: {
     endDate?: string
   }
 }) {
-
   const language = useContext(LanguageContext)
   const [showExperienceModal, setShowExperienceModal] = useState(false)
 
@@ -69,9 +70,11 @@ function ExperienceCard(props: {
               <Card.Title>
                 <Row className="top-row">
                   <Col>
-                    {language === 'IT'
-                      ? props.data.it.title
-                      : props.data.en.title}
+                    {chooseWordForActualLanguage(
+                      language,
+                      props.data.it.title,
+                      props.data.en.title,
+                    )}
                   </Col>
 
                   <Col className="text-end">
@@ -93,9 +96,11 @@ function ExperienceCard(props: {
                     ' - ' +
                     (props.data.endDate
                       ? props.data.endDate
-                      : language === 'IT'
-                      ? 'In corso'
-                      : 'In progress')}
+                      : chooseWordForActualLanguage(
+                          language,
+                          'In corso',
+                          'In progress',
+                        ))}
                 </Col>
               </Row>
             </Card.Body>
@@ -134,9 +139,11 @@ function ExperienceModal(props: {
       <Modal.Body>
         <Row className="justify">
           <Col>
-            {language === 'IT'
-              ? props.data.it.description
-              : props.data.en.description}
+            {chooseWordForActualLanguage(
+              language,
+              props.data.it.description,
+              props.data.en.description,
+            )}
           </Col>
         </Row>
         <br />
@@ -148,9 +155,11 @@ function ExperienceModal(props: {
               ' - ' +
               (props.data.endDate
                 ? props.data.endDate
-                : language === 'IT'
-                ? 'In corso'
-                : 'In progress')}
+                : chooseWordForActualLanguage(
+                    language,
+                    'In corso',
+                    'In progress',
+                  ))}
           </Col>
         </Row>
       </Modal.Body>
@@ -164,7 +173,7 @@ function ExperienceModal(props: {
                 onClick={props.onClose}
               >
                 <FontAwesomeIcon icon={faXmark} />{' '}
-                {language === 'IT' ? 'Chiudi' : 'Close'}
+                {chooseWordForActualLanguage(language, 'Chiudi', 'Close')}
               </Button>
             </Col>
           </Row>
