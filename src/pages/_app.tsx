@@ -2,6 +2,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/myStile.css'
 import '../styles/AppNavBar.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 import type { AppProps } from 'next/app'
 import { AppNavBar } from '@/components/AppNavBar'
