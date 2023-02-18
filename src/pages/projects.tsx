@@ -1,9 +1,6 @@
 import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faUpRightAndDownLeftFromCenter,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react'
 import ProjectsData from '../data/projectsData.json'
 import liveartImage from '../../public/images/liveart.jpg'
@@ -15,8 +12,7 @@ import { CardActionArea } from '@mui/material'
 export default function ProjectsPage() {
   const language = useContext(LanguageContext)
 
-  return (
-    <Container className="text-center">
+  return (<>
       <br />
       <h1>{chooseWordForActualLanguage(language, 'Progetti', 'Projects')}</h1>
       <Row className="d-flex justify-content-center">
@@ -35,7 +31,7 @@ export default function ProjectsPage() {
           image={studyplanImage}
         />
       </Row>
-    </Container>
+    </>
   )
 }
 

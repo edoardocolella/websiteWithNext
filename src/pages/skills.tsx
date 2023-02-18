@@ -7,7 +7,7 @@ export default function SkillsPage() {
   const language = useContext(LanguageContext)
 
   return (
-    <Container>
+    <>
       <br />
       <Row className="justify-content-center">
         <h1 className="center">Skills</h1>
@@ -54,6 +54,6 @@ export default function SkillsPage() {
           </Row>
         </Col>
       </Row>
-    </Container>
+    </>
   )
 }

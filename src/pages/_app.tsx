@@ -10,6 +10,7 @@ import type { AppProps } from 'next/app'
 import { AppNavBar } from '@/components/AppNavBar'
 import { MyFooter } from '@/components/MyFooter'
 import { createContext, useState } from 'react'
+import { Container } from 'react-bootstrap'
 
 export const LanguageContext = createContext('IT')
 export function chooseWordForActualLanguage(
@@ -35,7 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <LanguageContext.Provider value={language}>
         <AppNavBar />
-        <Component {...pageProps} />
+        <Container className="text-center">
+          <Component {...pageProps} />
+        </Container>
         <MyFooter setItalian={setItalian} setEnglish={setEnglish} />
       </LanguageContext.Provider>
     </>

@@ -157,7 +157,6 @@ function ExperienceModal(props: {
         </Row>
       </Modal.Body>
       <Modal.Footer>
-        <Col>
           <Row xs={2}>
             <Col>
               <Button
@@ -170,7 +169,6 @@ function ExperienceModal(props: {
               </Button>
             </Col>
           </Row>
-        </Col>
       </Modal.Footer>
     </Modal>
   )

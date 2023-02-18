@@ -18,8 +18,7 @@ import { CardActionArea } from '@mui/material'
 export default function EducationPage() {
   const language = useContext(LanguageContext)
 
-  return (
-    <Container className="text-center">
+  return (<>
       <br />
       <h1>
         {chooseWordForActualLanguage(language, 'Educazione', 'Education')}
@@ -30,8 +29,8 @@ export default function EducationPage() {
       </Row>
       <Row className="d-flex justify-content-center">
         <SchoolCard data={Data.liceo} image={imageRummo} />
-      </Row>
-    </Container>
+    </Row>
+    </>
   )
 }
 
@@ -108,6 +107,7 @@ function SchoolCard(props: {
                   />
                 </Col>
               </Row>
+              <br/>
               <Row>
                 <Col md={4}>
                   <Row>
@@ -254,7 +254,6 @@ function SchoolModal(props: {
         </Row>
       </Modal.Body>
       <Modal.Footer>
-        <Col>
           <Row xs={2}>
             <Col>
               <Button
@@ -266,7 +265,6 @@ function SchoolModal(props: {
               </Button>
             </Col>
           </Row>
-        </Col>
       </Modal.Footer>
     </Modal>
   )

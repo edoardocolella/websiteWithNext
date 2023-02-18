@@ -25,7 +25,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container>
           <br />
           <Row className="justify-content-center">
             <h1 className="center">About me</h1>
@@ -79,7 +78,6 @@ export default function Home() {
               />
             </Col>
           </Row>
-        </Container>
       </main>
     </>
   )

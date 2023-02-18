@@ -9,7 +9,7 @@ export default function ContactsPage() {
   const language = useContext(LanguageContext)
 
   return (
-    <Container>
+    <>
       <br />
       <h2 className="center">{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
       <Row className="me-3 justify-content-center">
@@ -65,6 +65,6 @@ export default function ContactsPage() {
           </ListGroup>
         </Col>
       </Row>
-    </Container>
+    </>
   )
 }
