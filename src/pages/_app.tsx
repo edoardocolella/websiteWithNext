@@ -1,4 +1,3 @@
-//import '@/styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/myStile.css'
 import '../styles/AppNavBar.css'
@@ -18,7 +17,7 @@ export function chooseWordForActualLanguage(
   italianWord: string,
   englishWord: string,
 ) {
-  return language == 'IT' ? italianWord : englishWord
+  return language === 'IT' ? italianWord : englishWord
 }
 
 export default function App({ Component, pageProps }: AppProps) {

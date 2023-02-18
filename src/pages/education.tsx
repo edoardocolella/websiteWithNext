@@ -4,39 +4,34 @@ import {
   faUserGraduate,
   faCalendar,
   faCity,
-  faUpRightAndDownLeftFromCenter,
-  faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react'
 import Data from '../data/educationData.json'
-import Image, { StaticImageData } from 'next/image'
-import imageRummo from '../../public/images/rummo.jpg'
-import imagePolito from '../../public/images/polito.png'
 import { LanguageContext, chooseWordForActualLanguage } from './_app'
-import { CardActionArea } from '@mui/material'
+import { CardActionArea, CardMedia } from '@mui/material'
 
 export default function EducationPage() {
   const language = useContext(LanguageContext)
-
-  return (<>
+  return (
+    <>
       <br />
       <h1>
         {chooseWordForActualLanguage(language, 'Educazione', 'Education')}
       </h1>
       <Row className="d-flex justify-content-center">
-        <SchoolCard data={Data.politoMag} image={imagePolito} />
-        <SchoolCard data={Data.politoTri} image={imagePolito} />
+        <SchoolCard data={Data.politoMag} />
+        <SchoolCard data={Data.politoTri} />
       </Row>
       <Row className="d-flex justify-content-center">
-        <SchoolCard data={Data.liceo} image={imageRummo} />
-    </Row>
+        <SchoolCard data={Data.liceo} />
+      </Row>
     </>
   )
 }
 
 function SchoolCard(props: {
   data: {
-    altText: string
+    image: string
     it: {
       title: string
       description: any
@@ -52,7 +47,6 @@ function SchoolCard(props: {
     city: string
     grade?: string
   }
-  image: StaticImageData
 }) {
   const language = useContext(LanguageContext)
   const [showSchoolModal, setShowSchoolModal] = useState(false)
@@ -68,7 +62,6 @@ function SchoolCard(props: {
     <>
       <SchoolModal
         data={props.data}
-        image={props.image}
         show={showSchoolModal}
         onClose={handleCloseSchoolModal}
       />
@@ -98,16 +91,13 @@ function SchoolCard(props: {
               </Card.Title>
               <Row>
                 <p />
-                <Col>
-                  <Image
-                    src={props.image}
-                    height={230}
-                    width={500}
-                    alt={props.data.altText}
-                  />
-                </Col>
+                <CardMedia
+                  component="img"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  image={props.data.image}
+                />
               </Row>
-              <br/>
+              <br />
               <Row>
                 <Col md={4}>
                   <Row>
@@ -177,6 +167,7 @@ function SchoolModal(props: {
   show: boolean
   onClose: any
   data: {
+    image: string
     it: {
       title: string
       description: any
@@ -192,7 +183,6 @@ function SchoolModal(props: {
     city: string
     grade?: string
   }
-  image: StaticImageData
 }) {
   const language = useContext(LanguageContext)
 
@@ -208,7 +198,11 @@ function SchoolModal(props: {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Image src={props.image} height={200} width={400} alt={'error'} />
+        <CardMedia
+          component="img"
+          style={{ maxWidth: '100%', height: 'auto' }}
+          image={props.data.image}
+        />
         <p />
         <Row className="justify">
           <Col>
@@ -253,19 +247,6 @@ function SchoolModal(props: {
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-          <Row xs={2}>
-            <Col>
-              <Button
-                className="me-1"
-                variant="secondary"
-                onClick={props.onClose}
-              >
-                <FontAwesomeIcon icon={faXmark} /> Close
-              </Button>
-            </Col>
-          </Row>
-      </Modal.Footer>
     </Modal>
   )
 }

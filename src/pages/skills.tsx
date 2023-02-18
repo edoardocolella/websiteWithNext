@@ -11,22 +11,22 @@ export default function SkillsPage() {
       <br />
       <Row className="justify-content-center">
         <h1 className="center">Skills</h1>
-        <Col className=" justify-content-center"  md={8} xl={7}>
+        <Col className=" justify-content-center"  md={8} xl={8}>
           <p />
           <ListGroup>
             {language === 'IT'
               ? Data.it.map((el) => (
-                  <ListGroup.Item key={el}>{el}</ListGroup.Item>
+                <ListGroup.Item className="center p-2" key={el}>{el}</ListGroup.Item>
                 ))
               : Data.en.map((el) => (
-                  <ListGroup.Item key={el}>{el}</ListGroup.Item>
+                  <ListGroup.Item className="center p-2" key={el}>{el}</ListGroup.Item>
                 ))}
           </ListGroup>
         </Col>
       </Row>
 
       <Row className="justify-content-center">
-        <Col className="justify" md={8} xl={7}>
+        <Col className="justify" md={8} xl={8}>
           <p />
           <h2 className="center">
             {chooseWordForActualLanguage(
@@ -40,14 +40,14 @@ export default function SkillsPage() {
             <Col>
               <ListGroup>
                 {Data.languagesPt1.map((el) => (
-                  <ListGroup.Item key={el}>{"- " + el}</ListGroup.Item>
+                  <ListGroup.Item  key={el}>{"- " + el}</ListGroup.Item>
                 ))}
               </ListGroup>
             </Col>
             <Col>
               <ListGroup>
               {Data.languagesPt2.map((el) => (
-                  <ListGroup.Item key={el}>{"- " + el}</ListGroup.Item>
+                  <ListGroup.Item  key={el}>{"- " + el}</ListGroup.Item>
                 ))}
               </ListGroup>
             </Col>

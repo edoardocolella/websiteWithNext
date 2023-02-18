@@ -1,6 +1,4 @@
-import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { Card, Col, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import ProjectsData from '../data/projectsData.json'
 import liveartImage from '../../public/images/liveart.jpg'
@@ -149,21 +147,6 @@ function ProjectModal(props: {
           </Row>
         )}
       </Modal.Body>
-      <Modal.Footer>
-        <Col>
-          <Row xs={2}>
-            <Col>
-              <Button
-                className="me-1"
-                variant="secondary"
-                onClick={props.onClose}
-              >
-                <FontAwesomeIcon icon={faXmark} /> Close
-              </Button>
-            </Col>
-          </Row>
-        </Col>
-      </Modal.Footer>
     </Modal>
   )
 }

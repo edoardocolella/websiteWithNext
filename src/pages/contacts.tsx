@@ -1,9 +1,13 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import {    faInstagram,  faLinkedin, faTelegram} from '@fortawesome/free-brands-svg-icons'
+import {
+  faInstagram,
+  faLinkedin,
+  faTelegram,
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Col, Container, ListGroup, Row } from 'react-bootstrap'
+import { Col, ListGroup, Row } from 'react-bootstrap'
 import { useContext } from 'react'
-import { LanguageContext } from './_app'
+import { chooseWordForActualLanguage, LanguageContext } from './_app'
 
 export default function ContactsPage() {
   const language = useContext(LanguageContext)
@@ -11,8 +15,10 @@ export default function ContactsPage() {
   return (
     <>
       <br />
-      <h2 className="center">{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
-      <Row className="me-3 justify-content-center">
+      <h2 className="center">
+        {chooseWordForActualLanguage(language, 'Contatti', 'Contacts')}
+      </h2>
+      <Row className="justify-content-center">
         <br />
         <Col xl={4}>
           <ListGroup>

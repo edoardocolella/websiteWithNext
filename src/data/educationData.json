@@ -1,6 +1,6 @@
 {
     "liceo": {
-        "altText": "",
+        "image": "https://www.anteprima24.it/wp-content/uploads/2017/11/liceo-rummo-e1510232319244.jpg",
         "it": {
             "title": "Liceo Scientifico G. Rummo",
             "qual": "Diploma di Maturità scientifica",
@@ -17,7 +17,7 @@
         "grade": "100L/100"
     },
     "politoMag": {
-        "altText": "",
+        "image": "https://www2.almalaurea.it/img/logofull/70032.png",
         "it": {
             "title": "Politecnico di Torino",
             "qual": "Laurea Magistrale in Ingegneria Informatica",
@@ -32,7 +32,7 @@
         "startDate": "2022"
     },
     "politoTri": {
-        "altText": "",
+        "image": "https://www2.almalaurea.it/img/logofull/70032.png",
         "it": {
             "title": "Politecnico di Torino",
             "qual": "Laurea Triennale in Ingegneria Informatica",

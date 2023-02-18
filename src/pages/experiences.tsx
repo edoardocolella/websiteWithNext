@@ -1,7 +1,7 @@
-import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
+import { Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import Data from '../data/experiencesData.json'
 import { LanguageContext, chooseWordForActualLanguage } from './_app'
 import { CardActionArea } from '@mui/material'
@@ -156,20 +156,6 @@ function ExperienceModal(props: {
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-          <Row xs={2}>
-            <Col>
-              <Button
-                className="me-1"
-                variant="secondary"
-                onClick={props.onClose}
-              >
-                <FontAwesomeIcon icon={faXmark} />{' '}
-                {chooseWordForActualLanguage(language, 'Chiudi', 'Close')}
-              </Button>
-            </Col>
-          </Row>
-      </Modal.Footer>
     </Modal>
   )
 }
