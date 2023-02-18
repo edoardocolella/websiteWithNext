@@ -24,11 +24,11 @@
     },
     "collanPT": {
         "it": {
-            "title": "Collaborazione part-time della didattica per il corso Politica e Tecnica",
+            "title": "Collaborazione della didattica per il corso Politica e Tecnica",
             "description": "Mi sono occupato di consigliare e revisionare gli studenti nella produzione del loro progetto del corso, fornendo loro tutta la mia conoscenza in ambito informatico."
         },
         "en": {
-            "title": "Part-time teaching assistant for the Politics and Techniques course",
+            "title": "Teaching assistant for the Politics and Techniques course",
             "description": "I have been involved in advising and reviewing students in the production of their course project, providing them with all my knowledge in computer science."
         },
         "startDate": "03/2022",
@@ -36,11 +36,11 @@
     },
     "collabINF": {
         "it": {
-            "title": "Collaborazione part-time della didattica per il corso Informatica",
+            "title": "Collaborazione della didattica per il corso Informatica",
             "description": "Mi sono occupato dell'assistenza diretta agli studenti nelle ore di laboratorio. Il linguaggio usato nel corso è stato Python 3."
         },
         "en": {
-            "title": "Part-time teaching assistant for the Computer Science course",
+            "title": "Teaching assistant for the Computer Science course",
             "description": "I took care of the direct assistance to the students during the laboratory hours. The language used in the course was Python 3."
         },
         "startDate": "10/2022",

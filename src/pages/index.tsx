@@ -15,6 +15,7 @@ export default function Home() {
 
   const myData = language === 'IT' ? Data.it : Data.en
 
+
   return (
     <>
       <Head>

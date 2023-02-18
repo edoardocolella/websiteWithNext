@@ -10,6 +10,7 @@ import liveartImage from '../../public/images/liveart.jpg'
 import studyplanImage from '../../public/images/studyplan.jpg'
 import Image, { StaticImageData } from 'next/image'
 import { chooseWordForActualLanguage, LanguageContext } from './_app'
+import { CardActionArea } from '@mui/material'
 
 export default function ProjectsPage() {
   const language = useContext(LanguageContext)
@@ -18,22 +19,22 @@ export default function ProjectsPage() {
     <Container className="text-center">
       <br />
       <h1>{chooseWordForActualLanguage(language, 'Progetti', 'Projects')}</h1>
-      <br />
-      <ProjectCard
-        image={liveartImage}
-        title={'LiveArtVR'}
-        data={ProjectsData.liveArt}
-      />
-      <br />
-      <ProjectCard title={'EZWH'} data={ProjectsData.ezwh} />
-      <br />
-      <ProjectCard title={'HikeFIVE!'} data={ProjectsData.hikeFIVE} />
-      <br />
-      <ProjectCard
-        title={'StudyPlan'}
-        data={ProjectsData.studyPlan}
-        image={studyplanImage}
-      />
+      <Row className="d-flex justify-content-center">
+        <ProjectCard
+          image={liveartImage}
+          title={'LiveArtVR'}
+          data={ProjectsData.liveArt}
+        />
+        <ProjectCard title={'EZWH'} data={ProjectsData.ezwh} />
+      </Row>
+      <Row className="d-flex justify-content-center">
+        <ProjectCard title={'HikeFIVE!'} data={ProjectsData.hikeFIVE} />
+        <ProjectCard
+          title={'StudyPlan'}
+          data={ProjectsData.studyPlan}
+          image={studyplanImage}
+        />
+      </Row>
     </Container>
   )
 }
@@ -68,27 +69,17 @@ function ProjectCard(props: {
         title={props.title}
         data={props.data}
       />
-      <Row className="justify-content-md-center">
-        <Col md={10}>
-          <Card>
+      <Col md={5} xl={5}>
+        <Card className="mb-3 mt-4">
+          <CardActionArea onClick={handleShowProjectModal}>
             <Card.Body>
               <Card.Title>
                 <Row className="top-row">
                   <Col>{props.title}</Col>
-
-                  <Col className="text-end">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      onClick={handleShowProjectModal}
-                    >
-                      <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
-                    </Button>
-                  </Col>
                 </Row>
               </Card.Title>
               <Row>
-                <Col className="text-start">
+                <Col>
                   <strong>
                     {chooseWordForActualLanguage(
                       language,
@@ -100,9 +91,9 @@ function ProjectCard(props: {
                 </Col>
               </Row>
             </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          </CardActionArea>
+        </Card>
+      </Col>
     </>
   )
 }
@@ -142,7 +133,7 @@ function ProjectModal(props: {
                 {chooseWordForActualLanguage(
                   language,
                   props.data.it.linkDemoDescription,
-                  props.data.en.linkDemoDescription
+                  props.data.en.linkDemoDescription,
                 )}{' '}
               </a>
             </Col>

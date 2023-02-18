@@ -1,13 +1,10 @@
 import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCalendar,
-  faUpRightAndDownLeftFromCenter,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Data from '../data/experiencesData.json'
 import { LanguageContext, chooseWordForActualLanguage } from './_app'
+import { CardActionArea } from '@mui/material'
 
 export default function ExperiencesPage() {
   const language = useContext(LanguageContext)
@@ -19,14 +16,16 @@ export default function ExperiencesPage() {
       </h1>
       <br />
       <h3>Eta Kappa Nu</h3>
-      <ExperienceCard data={Data.hknPres} />
-      <br />
-      <ExperienceCard data={Data.hknSite} />
+      <Row className="d-flex justify-content-center">
+        <ExperienceCard data={Data.hknPres} />
+        <ExperienceCard data={Data.hknSite} />
+      </Row>
       <br />
       <h3>Politecnico di Torino</h3>
-      <ExperienceCard data={Data.collabINF} />
-      <br />
-      <ExperienceCard data={Data.collanPT} />
+      <Row className="d-flex justify-content-center">
+        <ExperienceCard data={Data.collabINF} />
+        <ExperienceCard data={Data.collanPT} />
+      </Row>
     </Container>
   )
 }
@@ -63,9 +62,9 @@ function ExperienceCard(props: {
         onClose={handleCloseExperienceModal}
         data={props.data}
       />
-      <Row className="justify-content-md-center">
-        <Col md={10}>
-          <Card>
+      <Col md={5} xl={6}>
+        <Card className="mb-3 mt-4">
+          <CardActionArea onClick={handleShowExperienceModal}>
             <Card.Body>
               <Card.Title>
                 <Row className="top-row">
@@ -76,20 +75,10 @@ function ExperienceCard(props: {
                       props.data.en.title,
                     )}
                   </Col>
-
-                  <Col className="text-end">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      onClick={handleShowExperienceModal}
-                    >
-                      <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
-                    </Button>
-                  </Col>
                 </Row>
               </Card.Title>
               <Row>
-                <Col xs={6}>
+                <Col>
                   <FontAwesomeIcon icon={faCalendar} />
                   {' ' +
                     props.data.startDate +
@@ -104,16 +93,16 @@ function ExperienceCard(props: {
                 </Col>
               </Row>
             </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          </CardActionArea>
+        </Card>
+      </Col>
     </>
   )
 }
 
 function ExperienceModal(props: {
-  show: boolean | undefined
-  onClose: any
+  show: boolean
+  onClose: () => void
   data: {
     it: {
       title: string
@@ -133,7 +122,11 @@ function ExperienceModal(props: {
     <Modal show={props.show} onHide={props.onClose}>
       <Modal.Header closeButton>
         <Modal.Title>
-          {language === 'IT' ? props.data.it.title : props.data.en.title}
+          {chooseWordForActualLanguage(
+            language,
+            props.data.it.title,
+            props.data.en.title,
+          )}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
