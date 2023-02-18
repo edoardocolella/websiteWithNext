@@ -24,12 +24,13 @@ export default function EducationPage() {
       <h1>
         {chooseWordForActualLanguage(language, 'Educazione', 'Education')}
       </h1>
-      <br />
-      <SchoolCard data={Data.politoMag} image={imagePolito} />
-      <br />
-      <SchoolCard data={Data.politoTri} image={imagePolito} />
-      <br />
-      <SchoolCard data={Data.liceo} image={imageRummo} />
+      <Row className="d-flex justify-content-center">
+        <SchoolCard data={Data.politoMag} image={imagePolito} />
+        <SchoolCard data={Data.politoTri} image={imagePolito} />
+      </Row>
+      <Row className="d-flex justify-content-center">
+        <SchoolCard data={Data.liceo} image={imageRummo} />
+      </Row>
     </Container>
   )
 }
@@ -72,161 +73,102 @@ function SchoolCard(props: {
         show={showSchoolModal}
         onClose={handleCloseSchoolModal}
       />
-      <Row className="justify-content-md-center">
-        <Col md={10}>
-          <Card>
-            <CardActionArea onClick={handleShowSchoolModal}>
-              <Card.Body>
-                <Card.Title>
-                  {/* <Row className="top-row">
-                    <Col className="text-end">
-                      <Button
-                        size="sm"
-                        variant="secondary"
-                        onClick={handleShowSchoolModal}
-                      >
-                        <FontAwesomeIcon
-                          icon={faUpRightAndDownLeftFromCenter}
-                        />
-                      </Button>
-                    </Col>
-                  </Row> */}
-                </Card.Title>
-                <Row>
+      <Col md={10} xl={6}>
+        <Card className="mb-3 mt-4">
+          <CardActionArea onClick={handleShowSchoolModal}>
+            <Card.Body>
+              <Card.Title>
+                <Row className="top-row">
                   <Col>
-                    <Image
-                      src={props.image}
-                      height={200}
-                      width={400}
-                      alt={props.data.altText}
-                    />
-                  </Col>
-                  <Col>
-                    <Container className="text-center">
-                      <Row>
-                        <Col>
-                          <strong>
-                            {chooseWordForActualLanguage(
-                              language,
-                              'Istituto',
-                              'Institute',
-                            )}
-                          </strong>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col>
-                          {chooseWordForActualLanguage(
-                            language,
-                            props.data.it.title,
-                            props.data.en.title,
-                          )}
-                        </Col>
-                      </Row>
-                      <p />
-                      <Row>
-                        <Col>
-                          <strong>
-                            {chooseWordForActualLanguage(
-                              language,
-                              'Titolo',
-                              'Title',
-                            )}
-                          </strong>
-                        </Col>
-                      </Row>
-                      <Row className="justify-content-center">
-                        <Col md={8}>
-                          {chooseWordForActualLanguage(
-                            language,
-                            props.data.it.qual,
-                            props.data.en.qual,
-                          )}
-                        </Col>
-                      </Row>
-                      <p />
-
-                      <Row>
-                        <Col>
-                          <strong>
-                            {chooseWordForActualLanguage(
-                              language,
-                              'Voto',
-                              'Mark',
-                            )}
-                          </strong>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col>
-                          {props.data.grade
-                            ? props.data.grade
-                            : chooseWordForActualLanguage(
-                                language,
-                                'Non disponibile',
-                                'Not available',
-                              )}
-                        </Col>
-                      </Row>
-                      <p />
-
-                      <Row>
-                        <Col>
-                          <Container>
-                            <Row>
-                              <Col>
-                                <strong>
-                                  {chooseWordForActualLanguage(
-                                    language,
-                                    'Città',
-                                    'City',
-                                  )}
-                                </strong>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <FontAwesomeIcon icon={faCity} />
-                                {' ' + props.data.city}
-                              </Col>
-                            </Row>
-                          </Container>
-                        </Col>
-                        <Col>
-                          <Container>
-                            <Row>
-                              <Col>
-                                <strong>
-                                  {chooseWordForActualLanguage(
-                                    language,
-                                    'Data',
-                                    'Date',
-                                  )}
-                                </strong>
-                              </Col>
-                            </Row>
-                            <FontAwesomeIcon icon={faCalendar} />
-                            {' ' +
-                              props.data.startDate +
-                              ' - ' +
-                              (props.data.endDate
-                                ? props.data.endDate
-                                : chooseWordForActualLanguage(
-                                    language,
-                                    'in corso',
-                                    'in progress',
-                                  ))}
-                          </Container>
-                        </Col>
-                      </Row>
-                    </Container>
+                    {chooseWordForActualLanguage(
+                      language,
+                      props.data.it.title,
+                      props.data.en.title,
+                    )}
                   </Col>
                 </Row>
-              </Card.Body>
-            </CardActionArea>
-          </Card>
-        </Col>
-      </Row>
+                <Row className="justify-content-center">
+                  <Col md={10}>
+                    {chooseWordForActualLanguage(
+                      language,
+                      props.data.it.qual,
+                      props.data.en.qual,
+                    )}
+                  </Col>
+                </Row>
+              </Card.Title>
+              <Row>
+                <p />
+                <Col>
+                  <Image
+                    src={props.image}
+                    height={230}
+                    width={500}
+                    alt={props.data.altText}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col md={4}>
+                  <Row>
+                    <Col>
+                      <strong>
+                        {chooseWordForActualLanguage(language, 'Voto', 'Mark')}
+                      </strong>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      {props.data.grade
+                        ? props.data.grade
+                        : chooseWordForActualLanguage(
+                            language,
+                            'Non disponibile',
+                            'Not available',
+                          )}
+                    </Col>
+                  </Row>
+                </Col>
+                <Col md={3}>
+                  <Row>
+                    <Col>
+                      <strong>
+                        {chooseWordForActualLanguage(language, 'Città', 'City')}
+                      </strong>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FontAwesomeIcon icon={faCity} />
+                      {' ' + props.data.city}
+                    </Col>
+                  </Row>
+                </Col>
+                <Col md={5}>
+                  <Row>
+                    <Col>
+                      <strong>
+                        {chooseWordForActualLanguage(language, 'Data', 'Date')}
+                      </strong>
+                    </Col>
+                  </Row>
+                  <FontAwesomeIcon icon={faCalendar} />
+                  {' ' +
+                    props.data.startDate +
+                    ' - ' +
+                    (props.data.endDate
+                      ? props.data.endDate
+                      : chooseWordForActualLanguage(
+                          language,
+                          'in corso',
+                          'in progress',
+                        ))}
+                </Col>
+              </Row>
+            </Card.Body>
+          </CardActionArea>
+        </Card>
+      </Col>
     </>
   )
 }
