@@ -19,6 +19,9 @@ export default function ProjectsPage() {
         <ProjectCard project={ProjectsData.hikeFIVE} />
         <ProjectCard project={ProjectsData.studyPlan} />
       </Row>
+      <Row className="d-flex justify-content-center">
+        <ProjectCard project={ProjectsData.personalWebsite} />
+      </Row>
     </>
   )
 }
@@ -71,16 +74,7 @@ function ProjectCard(props: {
                 </Row>
               </Card.Title>
               <Row>
-                <Col>
-                  <strong>
-                    {chooseWordForActualLanguage(
-                      language,
-                      'Tecnologie: ',
-                      'Technology: ',
-                    )}
-                  </strong>
-                  {props.project.tech}
-                </Col>
+                <Col>{props.project.tech}</Col>
               </Row>
             </Card.Body>
           </CardActionArea>

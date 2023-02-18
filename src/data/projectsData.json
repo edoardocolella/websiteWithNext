@@ -15,7 +15,7 @@
     },
     "ezwh": {
         "title": "EZWH",
-        "tech": "javascript, express, sqlite",
+        "tech": "Javascript, Express.js, Sqlite",
         "it": {
             "description": "EZWH è un'applicazione web sviluppata in JavaScript con il framework express.js.",
             "linkRepoDescription": "Link alla Repository"
@@ -36,14 +36,14 @@
             "description": "HikeFIVE! is a web application developed in JavaScript with the React framework for the frontend and express.js for the backend.",
             "linkRepoDescription": "Link to Repository"
         },
-        "tech": "javascript, react, express, sqlite",
+        "tech": "Javascript, React.js, Express.js, Sqlite",
         "linkDemo": "",
         "linkRepo": "https://github.com/edoardocolella/studyplan"
     },
     "studyPlan": {
         "title": "StudyPlan",
         "image": "https://i.imgur.com/X1lFeW2.jpeg",
-        "tech": "javascript, react, express, sqlite",
+        "tech": "Javascript, React.js, Express.js, Sqlite",
         "it": {
             "description": "Una semplice app web in React ed Express per il corso Web Application I. Consente agli studenti di predisporre il proprio Piano di studi per iscrizione all'anno accademico.",
             "linkDemoDescription": "Link alla Demo pubblica",
@@ -56,5 +56,22 @@
         },
         "linkDemo": "https://study-plan-front.onrender.com/",
         "linkRepo": "https://github.com/edoardocolella/studyplan"
+    },
+    "personalWebsite": {
+        "title": "edoardocolella.it",
+        "image": "https://i.imgur.com/RRjlXG3.jpeg",
+        "tech": "Typescript, React, Next.js, Bootstrap, MaterialUI",
+        "it": {
+            "description": "Il mio sito personale, sviluppato in Typescript con il framework React e il framework Next.js.",
+            "linkDemoDescription": "Link al sito",
+            "linkRepoDescription": "Link alla Repository"
+        },
+        "en": {
+            "description": "My personal website, developed in Typescript with the React framework and the Next.js framework.",
+            "linkDemoDescription": "Link to the website",
+            "linkRepoDescription": "Link to Repository"
+        },
+        "linkDemo": "https://edoardocolella.it/",
+        "linkRepo": "https://github.com/edoardocolella/websiteWithNext"
     }
 }

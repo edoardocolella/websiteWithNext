@@ -22,7 +22,6 @@ import {
 import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
 import { chooseWordForActualLanguage, LanguageContext } from '../pages/_app'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
 export function AppNavBar() {
   let [showSidebar, setShowSidebar] = useState(false)
