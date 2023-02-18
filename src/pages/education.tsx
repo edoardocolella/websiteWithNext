@@ -92,6 +92,11 @@ function SchoolCard(props: {
               <Row>
                 <p />
                 <CardMedia
+                  alt={chooseWordForActualLanguage(
+                    language,
+                    props.data.it.title,
+                    props.data.en.title,
+                  )}
                   component="img"
                   style={{ maxWidth: '100%', height: 'auto' }}
                   image={props.data.image}
@@ -199,6 +204,11 @@ function SchoolModal(props: {
       </Modal.Header>
       <Modal.Body>
         <CardMedia
+          alt={chooseWordForActualLanguage(
+            language,
+            props.data.it.title,
+            props.data.en.title,
+          )}
           component="img"
           style={{ maxWidth: '100%', height: 'auto' }}
           image={props.data.image}

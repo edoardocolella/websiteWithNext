@@ -1,4 +1,4 @@
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import {
   faInstagram,
   faLinkedin,
@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Col, ListGroup, Row } from 'react-bootstrap'
 import { useContext } from 'react'
 import { chooseWordForActualLanguage, LanguageContext } from './_app'
-
 export default function ContactsPage() {
   const language = useContext(LanguageContext)
 
@@ -20,57 +19,46 @@ export default function ContactsPage() {
       </h2>
       <Row className="justify-content-center">
         <br />
-        <Col xl={4}>
+        <Col md={5} xl={4}>
           <ListGroup>
-            <ListGroup.Item className="align-items-center center p-3">
-              <FontAwesomeIcon icon={faEnvelope} />{' '}
-              <a
-                className="nodec"
-                href="mailto:edoardocolella.it@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                edoardocolella.it@gmail.com
-              </a>
-            </ListGroup.Item>
-            <ListGroup.Item className="align-items-center center p-3">
-              <FontAwesomeIcon icon={faLinkedin} />{' '}
-              <a
-                className="nodec"
-                href="https://www.linkedin.com/in/edoardo-colella-inf/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {'Edoardo Colella'}
-              </a>
-            </ListGroup.Item>
-
-            <ListGroup.Item className="align-items-center center p-3">
-              <FontAwesomeIcon icon={faTelegram} />{' '}
-              <a
-                className="nodec"
-                href="https://telegram.me/edoardocolella"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {' '}
-                {'@edoardocolella'}
-              </a>
-            </ListGroup.Item>
-            <ListGroup.Item className="align-items-center center p-3">
-              <FontAwesomeIcon icon={faInstagram} />{' '}
-              <a
-                className="nodec"
-                href="https://www.instagram.com/edoardo_colellaa/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {'@edoardo_colella'}
-              </a>
-            </ListGroup.Item>
+            <MyLink
+              icon={faEnvelope}
+              href="mailto:edoardocolella.it@gmail.com"
+              customLink="edoardocolella.it@gmail.com"
+            />
+            <MyLink
+              icon={faLinkedin}
+              href="https://www.linkedin.com/in/edoardo-colella-inf/"
+              customLink="Edoardo Colella"
+            />
+            <MyLink
+              icon={faTelegram}
+              href="https://telegram.me/edoardocolella"
+              customLink="@edoardocolella"
+            />
+            <MyLink
+              icon={faInstagram}
+              href="https://www.instagram.com/edoardo_colellaa/"
+              customLink="@edoardo_colella"
+            />
           </ListGroup>
         </Col>
       </Row>
     </>
+  )
+}
+
+function MyLink(props: {
+  href: string
+  customLink: string
+  icon: IconDefinition
+}) {
+  return (
+    <ListGroup.Item className="align-items-center center p-3">
+      <FontAwesomeIcon icon={props.icon} />{' '}
+      <a className="nodec" href={props.href} target="_blank" rel="noreferrer">
+        {props.customLink}
+      </a>
+    </ListGroup.Item>
   )
 }

@@ -82,7 +82,7 @@ export default function Home() {
   )
 }
 
-function NavCard(props: { page: any; image: string; title: string }) {
+function NavCard(props: { page: string; image: string; title: string }) {
   const router = useRouter()
 
   let navigateSlash = function () {
@@ -91,7 +91,12 @@ function NavCard(props: { page: any; image: string; title: string }) {
   return (
     <Card className="mb-3 mt-4">
       <CardActionArea onClick={navigateSlash}>
-        <CardMedia component="img" height="240" image={props.image} />
+        <CardMedia
+          component="img"
+          height="240"
+          image={props.image}
+          alt={props.page}
+        />
         <CardContent>
           <Typography gutterBottom align="center" variant="h4" component="div">
             {props.title}

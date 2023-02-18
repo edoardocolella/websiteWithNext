@@ -2,7 +2,7 @@ import { Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
-import Data from '../data/experiencesData.json'
+import ExperiencesData from '../data/experiencesData.json'
 import { LanguageContext, chooseWordForActualLanguage } from './_app'
 import { CardActionArea } from '@mui/material'
 
@@ -17,21 +17,21 @@ export default function ExperiencesPage() {
       <br />
       <h3>Eta Kappa Nu</h3>
       <Row className="d-flex justify-content-center">
-        <ExperienceCard data={Data.hknPres} />
-        <ExperienceCard data={Data.hknSite} />
+        <ExperienceCard experience={ExperiencesData.hknPres} />
+        <ExperienceCard experience={ExperiencesData.hknSite} />
       </Row>
       <br />
       <h3>Politecnico di Torino</h3>
       <Row className="d-flex justify-content-center">
-        <ExperienceCard data={Data.collabINF} />
-        <ExperienceCard data={Data.collanPT} />
+        <ExperienceCard experience={ExperiencesData.collabINF} />
+        <ExperienceCard experience={ExperiencesData.collanPT} />
       </Row>
     </Container>
   )
 }
 
 function ExperienceCard(props: {
-  data: {
+  experience: {
     it: {
       title: string
       description: string
@@ -60,7 +60,7 @@ function ExperienceCard(props: {
       <ExperienceModal
         show={showExperienceModal}
         onClose={handleCloseExperienceModal}
-        data={props.data}
+        experience={props.experience}
       />
       <Col md={5} xl={6}>
         <Card className="mb-3 mt-4">
@@ -71,8 +71,8 @@ function ExperienceCard(props: {
                   <Col>
                     {chooseWordForActualLanguage(
                       language,
-                      props.data.it.title,
-                      props.data.en.title,
+                      props.experience.it.title,
+                      props.experience.en.title,
                     )}
                   </Col>
                 </Row>
@@ -81,10 +81,10 @@ function ExperienceCard(props: {
                 <Col>
                   <FontAwesomeIcon icon={faCalendar} />
                   {' ' +
-                    props.data.startDate +
+                    props.experience.startDate +
                     ' - ' +
-                    (props.data.endDate
-                      ? props.data.endDate
+                    (props.experience.endDate
+                      ? props.experience.endDate
                       : chooseWordForActualLanguage(
                           language,
                           'In corso',
@@ -103,7 +103,7 @@ function ExperienceCard(props: {
 function ExperienceModal(props: {
   show: boolean
   onClose: () => void
-  data: {
+  experience: {
     it: {
       title: string
       description: string
@@ -124,8 +124,8 @@ function ExperienceModal(props: {
         <Modal.Title>
           {chooseWordForActualLanguage(
             language,
-            props.data.it.title,
-            props.data.en.title,
+            props.experience.it.title,
+            props.experience.en.title,
           )}
         </Modal.Title>
       </Modal.Header>
@@ -134,8 +134,8 @@ function ExperienceModal(props: {
           <Col>
             {chooseWordForActualLanguage(
               language,
-              props.data.it.description,
-              props.data.en.description,
+              props.experience.it.description,
+              props.experience.en.description,
             )}
           </Col>
         </Row>
@@ -144,10 +144,10 @@ function ExperienceModal(props: {
           <Col>
             <FontAwesomeIcon icon={faCalendar} />
             {' ' +
-              props.data.startDate +
+              props.experience.startDate +
               ' - ' +
-              (props.data.endDate
-                ? props.data.endDate
+              (props.experience.endDate
+                ? props.experience.endDate
                 : chooseWordForActualLanguage(
                     language,
                     'In corso',

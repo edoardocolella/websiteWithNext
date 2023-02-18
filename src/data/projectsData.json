@@ -1,6 +1,7 @@
 {
     "liveArt": {
-        "image" : "https://imgur.com/P9lgjs3.jpg",
+        "title": "LiveArtVR",
+        "image": "https://imgur.com/P9lgjs3.jpg",
         "it": {
             "description": "LiveArtVR è un software VR sviluppato in Unity per il corso Human Computer Interaction.",
             "linkRepoDescription": "Link alla Repository"
@@ -13,6 +14,7 @@
         "linkRepo": "https://github.com/edoardocolella/LiveArtVR"
     },
     "ezwh": {
+        "title": "EZWH",
         "tech": "javascript, express, sqlite",
         "it": {
             "description": "EZWH è un'applicazione web sviluppata in JavaScript con il framework express.js.",
@@ -25,6 +27,7 @@
         "linkRepo": "https://github.com/edoardocolella/EZWH"
     },
     "hikeFIVE": {
+        "title": "HikeFIVE!",
         "it": {
             "description": "HikeFIVE! è un'applicazione web sviluppata in JavaScript con i framework React per il frontend e express.js per il backend.",
             "linkRepoDescription": "Link alla Repository"
@@ -36,9 +39,9 @@
         "tech": "javascript, react, express, sqlite",
         "linkDemo": "",
         "linkRepo": "https://github.com/edoardocolella/studyplan"
-
     },
     "studyPlan": {
+        "title": "StudyPlan",
         "image": "https://i.imgur.com/X1lFeW2.jpeg",
         "tech": "javascript, react, express, sqlite",
         "it": {

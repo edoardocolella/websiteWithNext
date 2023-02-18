@@ -1,7 +1,6 @@
+import ProjectsData from '../data/projectsData.json'
 import { Card, Col, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
-import ProjectsData from '../data/projectsData.json'
-import Image, { StaticImageData } from 'next/image'
 import { chooseWordForActualLanguage, LanguageContext } from './_app'
 import { CardActionArea, CardMedia } from '@mui/material'
 
@@ -13,20 +12,20 @@ export default function ProjectsPage() {
       <br />
       <h1>{chooseWordForActualLanguage(language, 'Progetti', 'Projects')}</h1>
       <Row className="d-flex justify-content-center">
-        <ProjectCard title={'LiveArtVR'} data={ProjectsData.liveArt} />
-        <ProjectCard title={'EZWH'} data={ProjectsData.ezwh} />
+        <ProjectCard project={ProjectsData.liveArt} />
+        <ProjectCard project={ProjectsData.ezwh} />
       </Row>
       <Row className="d-flex justify-content-center">
-        <ProjectCard title={'HikeFIVE!'} data={ProjectsData.hikeFIVE} />
-        <ProjectCard title={'StudyPlan'} data={ProjectsData.studyPlan} />
+        <ProjectCard project={ProjectsData.hikeFIVE} />
+        <ProjectCard project={ProjectsData.studyPlan} />
       </Row>
     </>
   )
 }
 
 function ProjectCard(props: {
-  title: string
-  data: {
+  project: {
+    title: string
     image?: string
     linkDemo?: string
     linkRepo?: string
@@ -60,8 +59,7 @@ function ProjectCard(props: {
       <ProjectModal
         show={showProjectModal}
         onClose={handleCloseProjectModal}
-        title={props.title}
-        data={props.data}
+        project={props.project}
       />
       <Col md={5} xl={5}>
         <Card className="mb-3 mt-4">
@@ -69,7 +67,7 @@ function ProjectCard(props: {
             <Card.Body>
               <Card.Title>
                 <Row className="top-row">
-                  <Col>{props.title}</Col>
+                  <Col>{props.project.title}</Col>
                 </Row>
               </Card.Title>
               <Row>
@@ -81,7 +79,7 @@ function ProjectCard(props: {
                       'Technology: ',
                     )}
                   </strong>
-                  {props.data.tech}
+                  {props.project.tech}
                 </Col>
               </Row>
             </Card.Body>
@@ -94,9 +92,9 @@ function ProjectCard(props: {
 
 function ProjectModal(props: {
   show: boolean
-  title: string
   onClose: any
-  data: {
+  project: {
+    title: string
     image?: string
     linkDemo?: string
     linkRepo?: string
@@ -118,14 +116,15 @@ function ProjectModal(props: {
   return (
     <Modal show={props.show} onHide={props.onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{props.title}</Modal.Title>
+        <Modal.Title>{props.project.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {props.data.image && (
+        {props.project.image && (
           <CardMedia
             component="img"
             style={{ maxWidth: '100%', height: 'auto' }}
-            image={props.data.image}
+            image={props.project.image}
+            alt={props.project.title}
           />
         )}
         <Row className="justify">
@@ -133,32 +132,32 @@ function ProjectModal(props: {
             <br />
             {chooseWordForActualLanguage(
               language,
-              props.data.it.description,
-              props.data.en.description,
+              props.project.it.description,
+              props.project.en.description,
             )}
           </Col>
         </Row>
-        {props.data.linkDemo && (
+        {props.project.linkDemo && (
           <Row>
             <Col>
-              <a href={props.data.linkDemo} target="_blank" rel="noreferrer">
+              <a href={props.project.linkDemo} target="_blank" rel="noreferrer">
                 {chooseWordForActualLanguage(
                   language,
-                  props.data.it.linkDemoDescription,
-                  props.data.en.linkDemoDescription,
-                )}{' '}
+                  props.project.it.linkDemoDescription,
+                  props.project.en.linkDemoDescription,
+                )}
               </a>
             </Col>
           </Row>
         )}
-        {props.data.linkRepo && (
+        {props.project.linkRepo && (
           <Row>
             <Col>
-              <a href={props.data.linkRepo} target="_blank" rel="noreferrer">
+              <a href={props.project.linkRepo} target="_blank" rel="noreferrer">
                 {chooseWordForActualLanguage(
                   language,
-                  props.data.it.linkRepoDescription,
-                  props.data.en.linkRepoDescription,
+                  props.project.it.linkRepoDescription,
+                  props.project.en.linkRepoDescription,
                 )}
               </a>
             </Col>
