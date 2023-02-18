@@ -1,33 +1,24 @@
 import { Card, Col, Modal, Row } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import ProjectsData from '../data/projectsData.json'
-import liveartImage from '../../public/images/liveart.jpg'
-import studyplanImage from '../../public/images/studyplan.jpg'
 import Image, { StaticImageData } from 'next/image'
 import { chooseWordForActualLanguage, LanguageContext } from './_app'
-import { CardActionArea } from '@mui/material'
+import { CardActionArea, CardMedia } from '@mui/material'
 
 export default function ProjectsPage() {
   const language = useContext(LanguageContext)
 
-  return (<>
+  return (
+    <>
       <br />
       <h1>{chooseWordForActualLanguage(language, 'Progetti', 'Projects')}</h1>
       <Row className="d-flex justify-content-center">
-        <ProjectCard
-          image={liveartImage}
-          title={'LiveArtVR'}
-          data={ProjectsData.liveArt}
-        />
+        <ProjectCard title={'LiveArtVR'} data={ProjectsData.liveArt} />
         <ProjectCard title={'EZWH'} data={ProjectsData.ezwh} />
       </Row>
       <Row className="d-flex justify-content-center">
         <ProjectCard title={'HikeFIVE!'} data={ProjectsData.hikeFIVE} />
-        <ProjectCard
-          title={'StudyPlan'}
-          data={ProjectsData.studyPlan}
-          image={studyplanImage}
-        />
+        <ProjectCard title={'StudyPlan'} data={ProjectsData.studyPlan} />
       </Row>
     </>
   )
@@ -35,11 +26,21 @@ export default function ProjectsPage() {
 
 function ProjectCard(props: {
   title: string
-  image?: StaticImageData
   data: {
+    image?: string
+    linkDemo?: string
+    linkRepo?: string
     tech: string
-    it: { description: string }
-    en: { description: string }
+    it: {
+      description: string
+      linkDemoDescription?: string
+      linkRepoDescription?: string
+    }
+    en: {
+      description: string
+      linkRepoDescription?: string
+      linkDemoDescription?: string
+    }
   }
 }) {
   const [showProjectModal, setShowProjectModal] = useState(false)
@@ -57,7 +58,6 @@ function ProjectCard(props: {
   return (
     <>
       <ProjectModal
-        image={props.image}
         show={showProjectModal}
         onClose={handleCloseProjectModal}
         title={props.title}
@@ -94,10 +94,24 @@ function ProjectCard(props: {
 
 function ProjectModal(props: {
   show: boolean
-  image?: StaticImageData
   title: string
   onClose: any
-  data: any
+  data: {
+    image?: string
+    linkDemo?: string
+    linkRepo?: string
+
+    it: {
+      description: string
+      linkDemoDescription?: string
+      linkRepoDescription?: string
+    }
+    en: {
+      description: string
+      linkRepoDescription?: string
+      linkDemoDescription?: string
+    }
+  }
 }) {
   const language = useContext(LanguageContext)
 
@@ -107,8 +121,12 @@ function ProjectModal(props: {
         <Modal.Title>{props.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {props.image && (
-          <Image src={props.image} height={200} width={400} alt={'error'} />
+        {props.data.image && (
+          <CardMedia
+            component="img"
+            style={{ maxWidth: '100%', height: 'auto' }}
+            image={props.data.image}
+          />
         )}
         <Row className="justify">
           <Col>
@@ -141,7 +159,7 @@ function ProjectModal(props: {
                   language,
                   props.data.it.linkRepoDescription,
                   props.data.en.linkRepoDescription,
-                )}{' '}
+                )}
               </a>
             </Col>
           </Row>

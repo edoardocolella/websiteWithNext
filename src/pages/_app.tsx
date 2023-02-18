@@ -14,10 +14,12 @@ import { Container } from 'react-bootstrap'
 export const LanguageContext = createContext('IT')
 export function chooseWordForActualLanguage(
   language: string,
-  italianWord: string,
-  englishWord: string,
+  italianWord?: string,
+  englishWord?: string,
 ) {
-  return language === 'IT' ? italianWord : englishWord
+  if (englishWord && italianWord)
+    return language === 'IT' ? italianWord : englishWord
+  else return "undefined"
 }
 
 export default function App({ Component, pageProps }: AppProps) {

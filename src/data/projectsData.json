@@ -1,5 +1,6 @@
 {
     "liveArt": {
+        "image" : "https://imgur.com/P9lgjs3.jpg",
         "it": {
             "description": "LiveArtVR è un software VR sviluppato in Unity per il corso Human Computer Interaction.",
             "linkRepoDescription": "Link alla Repository"
@@ -12,7 +13,6 @@
         "linkRepo": "https://github.com/edoardocolella/LiveArtVR"
     },
     "ezwh": {
-        "description": "",
         "tech": "javascript, express, sqlite",
         "it": {
             "description": "EZWH è un'applicazione web sviluppata in JavaScript con il framework express.js.",
@@ -39,6 +39,7 @@
 
     },
     "studyPlan": {
+        "image": "https://i.imgur.com/X1lFeW2.jpeg",
         "tech": "javascript, react, express, sqlite",
         "it": {
             "description": "Una semplice app web in React ed Express per il corso Web Application I. Consente agli studenti di predisporre il proprio Piano di studi per iscrizione all'anno accademico.",
