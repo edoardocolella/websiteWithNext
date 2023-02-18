@@ -8,6 +8,7 @@ import {
   faLightbulb,
   faAddressCard,
   faMailBulk,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   Button,
@@ -18,22 +19,14 @@ import {
   Row,
   ListGroup,
 } from 'react-bootstrap'
-import {
-  JSXElementConstructor,
-  ReactElement,
-  useContext,
-  useState,
-} from 'react'
+import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
-import { LanguageContext } from '../pages/_app' 
+import { chooseWordForActualLanguage, LanguageContext } from '../pages/_app'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 export function AppNavBar() {
-  //let navigate = useNavigate()
   let [showSidebar, setShowSidebar] = useState(false)
-  const router = useRouter();
-
-  const language = useContext(LanguageContext)
-
+  const router = useRouter()
 
   let handleMenuClick = () => {
     setShowSidebar(true)
@@ -46,8 +39,8 @@ export function AppNavBar() {
   let handlePageSelect = function (page: any) {
     setShowSidebar(false)
     router.replace(page)
-    //navigate(page)
   }
+  const language = useContext(LanguageContext)
 
   return (
     <>
@@ -63,21 +56,20 @@ export function AppNavBar() {
               </Button>
             </Col>
             <Col className="d-flex align-items-center justify-content-center">
-              <Button variant="navbar" size="lg" onClick={() =>
-                //navigate('/')
-                router.replace("/")
-              }>
+              <Button
+                variant="navbar"
+                size="lg"
+                onClick={() => router.replace('/')}
+              >
                 Edoardo Colella
               </Button>
             </Col>
-            <Col
-              xs={1}
-              className="d-flex align-items-center justify-content-center"
-            ></Col>
+            <Col xs={1} />
           </Row>
         </Container>
       </Navbar>
       <SideBar
+        language={language}
         show={showSidebar}
         pageSelect={handlePageSelect}
         onHide={handleCloseClick}
@@ -87,17 +79,17 @@ export function AppNavBar() {
 }
 
 function SideBar(props: {
+  language: string
   pageSelect: (arg0: string) => void
   show: boolean
-  onHide: any
+  onHide: () => void
 }) {
 
-  const language = useContext(LanguageContext)
+  const language = props.language
 
   let selectEmpty = function () {
     props.pageSelect('/')
   }
-
   let selectEducation = function () {
     props.pageSelect('/education')
   }
@@ -132,56 +124,57 @@ function SideBar(props: {
   return (
     <Offcanvas show={props.show} onHide={props.onHide}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>
-          <h1>Explore</h1>
-        </Offcanvas.Title>
+        <h1>Explore</h1>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <ListGroup variant="flush">
-          <ListGroup.Item action onClick={selectEmpty}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faCompass} />}
-              name="About"
-            />
-          </ListGroup.Item>
-
-          <ListGroup.Item action onClick={selectEducation}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faUserGraduate} />}
-              name={language === 'IT' ? 'Educazione' : 'Education'}
-            />
-          </ListGroup.Item>
-          <ListGroup.Item action onClick={selectExperiences}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faBriefcase} />}
-              name={language === 'IT' ? 'Esperienze' : 'Experiences'}
-            />
-          </ListGroup.Item>
-          <ListGroup.Item action onClick={selectProjects}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faProjectDiagram} />}
-              name={language === 'IT' ? 'Progetti' : 'Projects'}
-            />
-          </ListGroup.Item>
-          <ListGroup.Item action onClick={selectSkills}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faLightbulb} />}
-              name="Skills"
-            />
-          </ListGroup.Item>
-
-          <ListGroup.Item action onClick={selectContacts}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faMailBulk} />}
-              name={language === 'IT' ? 'Contatti' : 'Contacts'}
-            />
-          </ListGroup.Item>
-          <ListGroup.Item action onClick={onButtonClick}>
-            <SideBarElement
-              icon={<FontAwesomeIcon icon={faAddressCard} />}
-              name={language === 'IT' ? 'Curriculum vitae' : 'Resume'}
-            />
-          </ListGroup.Item>
+          <SideBarElement
+            icon={faCompass}
+            name="About"
+            onButtonClick={selectEmpty}
+          />
+          <SideBarElement
+            icon={faUserGraduate}
+            name={chooseWordForActualLanguage(
+              language,
+              'Educazione',
+              'Education',
+            )}
+            onButtonClick={selectEducation}
+          />
+          <SideBarElement
+            icon={faBriefcase}
+            name={chooseWordForActualLanguage(
+              language,
+              'Esperienze',
+              'Experiences',
+            )}
+            onButtonClick={selectExperiences}
+          />
+          <SideBarElement
+            icon={faProjectDiagram}
+            name={chooseWordForActualLanguage(language, 'Progetti', 'Projects')}
+            onButtonClick={selectProjects}
+          />
+          <SideBarElement
+            icon={faLightbulb}
+            name="Skills"
+            onButtonClick={selectSkills}
+          />
+          <SideBarElement
+            icon={faMailBulk}
+            name={chooseWordForActualLanguage(language, 'Contatti', 'Contacts')}
+            onButtonClick={selectContacts}
+          />
+          <SideBarElement
+            icon={faAddressCard}
+            name={chooseWordForActualLanguage(
+              language,
+              'Curriculum vitae',
+              'Resume',
+            )}
+            onButtonClick={onButtonClick}
+          />
         </ListGroup>
       </Offcanvas.Body>
     </Offcanvas>
@@ -189,12 +182,15 @@ function SideBar(props: {
 }
 
 function SideBarElement(props: {
-  icon: string | ReactElement<any, string | JSXElementConstructor<any>>
+  icon: IconDefinition
   name: string
+  onButtonClick: () => void
 }) {
   return (
-    <Container className="sidebar-item">
-      {props.icon} {props.name}
-    </Container>
+    <ListGroup.Item action onClick={props.onButtonClick}>
+      <Container className="sidebar-item">
+        <FontAwesomeIcon icon={props.icon} /> {props.name}
+      </Container>
+    </ListGroup.Item>
   )
 }

@@ -35,7 +35,7 @@ export default function Home() {
             </Col>
           </Row>
           <Row className="d-flex justify-content-center">
-            <Col md={10} xl={4} className="me-3">
+            <Col md={10} xl={4}>
               <NavCard
                 title={chooseWordForActualLanguage(
                   language,
@@ -46,7 +46,7 @@ export default function Home() {
                 page="education"
               />
             </Col>
-            <Col md={10} xl={4} className="me-3">
+            <Col md={10} xl={4}>
               <NavCard
                 title={chooseWordForActualLanguage(
                   language,
@@ -59,7 +59,7 @@ export default function Home() {
             </Col>
           </Row>
           <Row className="d-flex justify-content-center">
-            <Col md={10} xl={4} className="me-3">
+            <Col md={10} xl={4}>
               <NavCard
                 title={chooseWordForActualLanguage(
                   language,
@@ -70,7 +70,7 @@ export default function Home() {
                 page="projects"
               />
             </Col>
-            <Col md={10} xl={4} className="me-3">
+            <Col md={10} xl={4}>
               <NavCard
                 title="Skills"
                 image="https://jvngarcia.com/wp-content/uploads/2021/07/frameworks-mas-famosos-del-mundo.jpg"

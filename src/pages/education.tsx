@@ -131,7 +131,7 @@ function SchoolCard(props: {
                       </Col>
                     </Row>
                     <Row className="justify-content-center">
-                      <Col md={6}>
+                      <Col md={8}>
                         {language === 'IT'
                           ? props.data.it.qual
                           : props.data.en.qual}

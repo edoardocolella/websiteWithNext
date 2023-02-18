@@ -11,7 +11,7 @@ import { AppNavBar } from '@/components/AppNavBar'
 import { MyFooter } from '@/components/MyFooter'
 import { createContext, useState } from 'react'
 
-export const LanguageContext = createContext("IT")
+export const LanguageContext = createContext('IT')
 export function chooseWordForActualLanguage(
   language: string,
   italianWord: string,
@@ -33,8 +33,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <AppNavBar />
       <LanguageContext.Provider value={language}>
+        <AppNavBar />
         <Component {...pageProps} />
         <MyFooter setItalian={setItalian} setEnglish={setEnglish} />
       </LanguageContext.Provider>

@@ -9,9 +9,9 @@ export default function SkillsPage() {
   return (
     <Container>
       <br />
-      <Row className="me-3 justify-content-center">
+      <Row className="justify-content-center">
         <h1 className="center">Skills</h1>
-        <Col className="me-3 justify-content-center"  md={8} xl={7}>
+        <Col className=" justify-content-center"  md={8} xl={7}>
           <p />
           <ListGroup>
             {language === 'IT'
@@ -25,7 +25,7 @@ export default function SkillsPage() {
         </Col>
       </Row>
 
-      <Row className="me-3 justify-content-center">
+      <Row className="justify-content-center">
         <Col className="justify" md={8} xl={7}>
           <p />
           <h2 className="center">
