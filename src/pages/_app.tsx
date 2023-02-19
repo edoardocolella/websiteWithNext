@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/myStile.css'
-import '../styles/AppNavBar.css'
+import '../styles/style.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false

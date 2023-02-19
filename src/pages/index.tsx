@@ -1,14 +1,10 @@
-import Head from 'next/head'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
-import { CardActionArea } from '@mui/material'
-import { useRouter } from 'next/router'
+
 import { Row, Col } from 'react-bootstrap'
 import Data from '../data/homepageData.json'
 import { LanguageContext, chooseWordForActualLanguage } from './_app'
 import { useContext } from 'react'
+import { NavCard } from '@/components/HomePage/NavCard'
+
 
 export default function Home() {
   const language = useContext(LanguageContext)
@@ -20,15 +16,15 @@ export default function Home() {
       
         <br />
         <Row className="justify-content-center">
-          <h1 className="center">About me</h1>
-          <Col className="justify-content-center" md={10} xl={8}>
+          <h1 >About me</h1>
+          <Col className="justify-content-center" md={10} xl={10}>
             <p>{myData.homePageP1}</p>
             <p>{myData.homePageP2}</p>
             <p>{myData.homePageP3}</p>
           </Col>
         </Row>
         <Row className="d-flex justify-content-center">
-          <Col md={10} xl={4}>
+          <Col md={10} xl={5}>
             <NavCard
               title={chooseWordForActualLanguage(
                 language,
@@ -39,7 +35,7 @@ export default function Home() {
               page="education"
             />
           </Col>
-          <Col md={10} xl={4}>
+          <Col md={10} xl={5}>
             <NavCard
               title={chooseWordForActualLanguage(
                 language,
@@ -50,9 +46,8 @@ export default function Home() {
               page="experiences"
             />
           </Col>
-        </Row>
-        <Row className="d-flex justify-content-center">
-          <Col md={10} xl={4}>
+        
+          <Col md={10} xl={5}>
             <NavCard
               title={chooseWordForActualLanguage(
                 language,
@@ -63,7 +58,7 @@ export default function Home() {
               page="projects"
             />
           </Col>
-          <Col md={10} xl={4}>
+          <Col md={10} xl={5}>
             <NavCard
               title="Skills"
               image="https://jvngarcia.com/wp-content/uploads/2021/07/frameworks-mas-famosos-del-mundo.jpg"
@@ -75,27 +70,4 @@ export default function Home() {
   )
 }
 
-function NavCard(props: { page: string; image: string; title: string }) {
-  const router = useRouter()
 
-  let navigateSlash = function () {
-    router.replace(`/${props.page}`)
-  }
-  return (
-    <Card className="mb-3 mt-4">
-      <CardActionArea onClick={navigateSlash}>
-        <CardMedia
-          component="img"
-          height="240"
-          image={props.image}
-          alt={props.page}
-        />
-        <CardContent>
-          <Typography gutterBottom align="center" variant="h4" component="div">
-            {props.title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  )
-}

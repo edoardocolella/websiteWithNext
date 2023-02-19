@@ -1,4 +1,4 @@
-.mountain-bg {
+.code-bg {
     background-image: url(https://i.imgur.com/nhX3VEW.jpeg);
     background-position: center;
     color: white;
@@ -7,7 +7,6 @@
 .navbar-items {
     width: 100%;
 }
-
 
 .dropstart .dropdown-toggle::before {
     display: none !important;
@@ -22,6 +21,10 @@
     cursor: pointer;
 }
 
+.btn-navbar:hover {
+    color: white!important;
+}
+
 .svg-navbar{
     background-color: rgb(60 58 58 / 49%)!important; 
     color: white!important;
@@ -30,10 +33,7 @@
     font-weight: bold !important;
 }
 
-.btn-navbar:hover {
-    background-color: var(--button-highlight-bg-color)!important;
-    color: black!important;
-}
+
 
 .btn-xl {
     padding: .8rem 1rem!important;
@@ -61,5 +61,32 @@
     font-weight: bold !important;
     font-size: 30px;
     padding: 7px;
+}
+
+.item-padding {
+    padding: 15px;
+  }
+
+.center {
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+  text-justify: inter-word;
+}
+
+.vertical{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.nodec { 
+    color: black;
+    text-decoration: none;
+ }
+
+.pad30{
+    padding: 30px;
 }
 
