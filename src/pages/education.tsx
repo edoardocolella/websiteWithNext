@@ -13,7 +13,7 @@ export default function EducationPage() {
         {chooseWordForActualLanguage(language, 'Educazione', 'Education')}
       </h1>
       <Row className="d-flex justify-content-center">
-        {SchoolData.map((school) => <SchoolCard key={school.it.title} data={school} />)}
+        {SchoolData.map((school) => <SchoolCard key={school.key} data={school} />)}
       </Row>
     </>
   )
