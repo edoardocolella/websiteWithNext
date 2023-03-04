@@ -43,7 +43,7 @@ export function AppNavBar() {
 
   return (
     <>
-      <Navbar bg="transparent" className="mountain-bg font-weight-bold">
+      <Navbar bg="transparent" className="code-bg font-weight-bold">
         <Container fluid className="d-flex justify-content-center">
           <Row className="navbar-items d-flex justify-content-between">
             <Col

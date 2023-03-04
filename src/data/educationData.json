@@ -1,22 +1,6 @@
-{
-    "liceo": {
-        "image": "https://www.anteprima24.it/wp-content/uploads/2017/11/liceo-rummo-e1510232319244.jpg",
-        "it": {
-            "title": "Liceo Scientifico G. Rummo",
-            "qual": "Diploma di Maturità scientifica",
-            "description": "Nel corso dei cinque anni di scuola superiore ho imparato i fondamenti della matematica analitica, delle scienze naturali e di comprensione di testi, in lingua inglese e italiana."
-        },
-        "en": {
-            "title": "Liceo Scientifico G. Rummo",
-            "qual": "Scientific high school diploma",
-            "description": "During the five years of high school I learned the fundamentals of analytical mathematics, natural sciences and text comprehension, in English and Italian."
-        },
-        "city": "Benevento",
-        "startDate": "2013",
-        "endDate": "2018",
-        "grade": "100L/100"
-    },
-    "politoMag": {
+[
+    {
+        "key": "Magistrale",
         "image": "https://www2.almalaurea.it/img/logofull/70032.png",
         "it": {
             "title": "Politecnico di Torino",
@@ -31,7 +15,8 @@
         "city": "Torino",
         "startDate": "2022"
     },
-    "politoTri": {
+    {
+        "key": "Triennale",
         "image": "https://www2.almalaurea.it/img/logofull/70032.png",
         "it": {
             "title": "Politecnico di Torino",
@@ -47,5 +32,23 @@
         "startDate": "2018",
         "endDate": "2022",
         "grade": "100/110"
+    },
+    {
+        "key": "Liceo",
+        "image": "https://www.anteprima24.it/wp-content/uploads/2017/11/liceo-rummo-e1510232319244.jpg",
+        "it": {
+            "title": "Liceo Scientifico G. Rummo",
+            "qual": "Diploma di Maturità scientifica",
+            "description": "Nel corso dei cinque anni di scuola superiore ho imparato i fondamenti della matematica analitica, delle scienze naturali e di comprensione di testi, in lingua inglese e italiana."
+        },
+        "en": {
+            "title": "Liceo Scientifico G. Rummo",
+            "qual": "Scientific high school diploma",
+            "description": "During the five years of high school I learned the fundamentals of analytical mathematics, natural sciences and text comprehension, in English and Italian."
+        },
+        "city": "Benevento",
+        "startDate": "2013",
+        "endDate": "2018",
+        "grade": "100L/100"
     }
-}
+]

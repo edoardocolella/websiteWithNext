@@ -1,37 +1,12 @@
-import { Row } from 'react-bootstrap'
-import { useContext } from 'react'
-import ExperiencesData from '../data/experiencesData.json'
-import { LanguageContext, chooseWordForActualLanguage } from './_app'
-import { ExperienceCard } from '@/components/ExperiencePage/ExperienceCard'
+import React, { useContext, useState } from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import { chooseWordForActualLanguage, LanguageContext } from '../../pages/_app'
+import { ExperienceModal } from './ExperienceModal'
+import { CardActionArea } from '@mui/material'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 
-export default function ExperiencesPage() {
-  const language = useContext(LanguageContext)
-  return (
-    <>
-      <br />
-      <h1>
-        {chooseWordForActualLanguage(language, 'Esperienze', 'Experiences')}
-      </h1>
-      <br />
-      <h3>Eta Kappa Nu</h3>
-      <Row className="d-flex justify-content-center">
-        <ExperienceCard experience={ExperiencesData.hknPres} />
-        <ExperienceCard experience={ExperiencesData.hknSite} />
-      </Row>
-      <br />
-      <h3>Politecnico di Torino</h3>
-      <Row className="d-flex justify-content-center">
-        <ExperienceCard experience={ExperiencesData.collabINF} />
-        <ExperienceCard experience={ExperiencesData.collanPT} />
-      </Row>
-      <Row className="d-flex justify-content-center">
-        <ExperienceCard experience={ExperiencesData.collabProOgg} />
-      </Row>
-    </>
-  )
-}
-
-function ExperienceCard(props: {
+export function ExperienceCard(props: {
   experience: {
     it: {
       title: string
@@ -63,7 +38,7 @@ function ExperienceCard(props: {
         onClose={handleCloseExperienceModal}
         experience={props.experience}
       />
-      <Col md={5} xl={6}>
+      <Col md={5} xl={5}>
         <Card className="mb-3 mt-4">
           <CardActionArea onClick={handleShowExperienceModal}>
             <Card.Body>
