@@ -26,6 +26,9 @@ export default function ExperiencesPage() {
         <ExperienceCard experience={ExperiencesData.collabINF} />
         <ExperienceCard experience={ExperiencesData.collanPT} />
       </Row>
+      <Row className="d-flex justify-content-center">
+        <ExperienceCard experience={ExperiencesData.collabProOgg} />
+      </Row>
     </Container>
   )
 }

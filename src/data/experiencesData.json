@@ -45,5 +45,16 @@
         },
         "startDate": "10/2022",
         "endDate": "01/2023"
+    },
+    "collabProOgg": {
+        "it": {
+            "title": "Collaborazione della didattica per il corso Programmazione ad Oggetti",
+            "description": "Mi sono occupato dell'assistenza diretta agli studenti nelle ore di laboratorio. Il linguaggio usato nel corso è stato Java 11."
+        },
+        "en": {
+            "title": "Teaching assistant for the Object-Oriented Programming course",
+            "description": "I took care of the direct assistance to the students during the laboratory hours. The language used in the course was Java 11."
+        },
+        "startDate": "03/2023"
     }
 }
